@@ -4,7 +4,12 @@
   "description": "POC of Javascript unit test",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laytzehwu/js-unit-test.git"
   },
   "keywords": [
     "Javascript",
@@ -16,6 +21,8 @@
   "author": "Lay Tzeh Wu",
   "license": "ISC",
   "devDependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
     "gulp": "^3.9.1"
   }
 }

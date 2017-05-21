@@ -1,0 +1,33 @@
+html, body {
+	font-size: 14px;
+	font-family: Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	line-height: 1.5;
+	color: #222;
+	margin: 2rem;
+}
+
+form#login {
+	width: 40rem;
+	font-size: 2rem;
+}
+
+form#login button {
+	float: right;
+	margin-right: 0.6rem;
+}
+
+input {
+	min-width: 20rem;
+	font-size: 2rem;
+}
+
+label {
+	display: block;
+	margin: 0.5rem;
+	text-align: right;
+}
+
+button {
+	font-size: 2rem;
+	
+}
