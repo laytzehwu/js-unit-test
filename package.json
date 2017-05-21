@@ -1,0 +1,21 @@
+{
+  "name": "js-unit-test",
+  "version": "1.0.0",
+  "description": "POC of Javascript unit test",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "Javascript",
+    "Unit",
+    "Test",
+    "Karma",
+    "JasmineJS"
+  ],
+  "author": "Lay Tzeh Wu",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
