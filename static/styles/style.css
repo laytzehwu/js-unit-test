@@ -14,14 +14,28 @@ form#login {
 form#login button {
 	float: right;
 	margin-right: 0.6rem;
+	color: #fff;
+    background-color: #0000ff;
+    border: none;	
 }
 
-input {
+form#login button:disabled {
+	opacity: 0.4;
+	background-color: #222;
+}
+
+input[type="text"], input[type="password"] {
 	min-width: 20rem;
 	font-size: 2rem;
 }
 
+input[type="checkbox"] {
+	width: 2rem;
+	height: 2rem;
+}
+
 label {
+	cursor: pointer;
 	display: block;
 	margin: 0.5rem;
 	text-align: right;

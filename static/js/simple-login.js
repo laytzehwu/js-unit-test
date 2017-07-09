@@ -12,14 +12,22 @@ $(document).ready(function () {
 			allowSubmit = false;
 		}
 		if (allowSubmit) {
-			console.log('Allow submit');
 			$btnSubmit.removeAttr('disabled');
+			
 		} else {
-			console.log('Can not submit');
 			$btnSubmit.attr('disabled', true);
 		}
 	}
 	updateSubmit();
 	$login.on('keyup', updateSubmit);
 	$password.on('keyup', updateSubmit);
+	
+	var $tcCheckbox = $form.find('input[type="checkbox"]');
+	$tcCheckbox.change(function () {
+		if ($tcCheckbox.is(':checked')) {
+			$btnSubmit.removeAttr('disabled');
+		} else {
+			$btnSubmit.attr('disabled', true);
+		}
+	});
 });

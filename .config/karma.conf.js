@@ -1,10 +1,11 @@
 module.exports = function (config) {
 	config.set({
-		basePath: '../..',
+		basePath: '',
 		frameworks: ['jasmine'],
 		files: [
-			'./static/js/**/*.js',
-			'./spec/**/*Spec.js'
+			'https://code.jquery.com/jquery-3.2.1.slim.min.js',
+			{pattern: '../static/js/**/*.js', included: true},
+			{pattern: '../spec/**/*.js', included: true}
 		],
 		exclude: [],
 		reporters: ['progress'],
