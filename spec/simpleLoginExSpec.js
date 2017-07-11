@@ -21,4 +21,28 @@ describe('Simple login form', function () {
 		expect(loginer.allowLogin).toBeFalsy();
 		expect(loginer.getLoginID).toHaveBeenCalled();
 	});
+	it('ensure login ID and password entry checked when enable/disable login button', function () {
+		var loginer = new LoginerEx('form');
+		const loginID = spyOn(loginer, 'getLoginID');
+		loginID.and.returnValue('ABC123');
+		spyOn(loginer, 'getPassword').and.returnValues('ABC123');
+		spyOn(loginer, 'enableSubmitButton');
+		spyOn(loginer,'disableSubmitButton');
+
+		loginer.updateLoginButton();
+		expect(loginer.getLoginID).toHaveBeenCalled();
+		expect(loginer.getPassword).toHaveBeenCalled();
+		expect(loginer.enableSubmitButton).toHaveBeenCalled();
+		
+		loginID.calls.reset();
+		loginer.getPassword.calls.reset();
+		loginer.enableSubmitButton.calls.reset();
+		loginer.disableSubmitButton.calls.reset();
+		loginID.and.returnValue('');
+		loginer.updateLoginButton();
+		
+		expect(loginer.getLoginID).toHaveBeenCalled();
+		expect(loginer.enableSubmitButton).not.toHaveBeenCalled();
+		expect(loginer.disableSubmitButton).toHaveBeenCalled();
+	});
 });
