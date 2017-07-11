@@ -4,10 +4,13 @@ module.exports = function (config) {
 		frameworks: ['jasmine'],
 		files: [
 			'https://code.jquery.com/jquery-3.2.1.slim.min.js',
+			'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js',
 			{pattern: '../static/js/**/*.js', included: true},
 			{pattern: '../spec/**/*.js', included: true}
 		],
-		exclude: [],
+		exclude: [
+			'../static/js/simple-login.js'
+		],
 		reporters: ['progress'],
 		port: 9876,
 		color: true,
