@@ -9,7 +9,9 @@ module.exports = function (config) {
 			{pattern: '../spec/**/*.js', included: true}
 		],
 		exclude: [
-			'../static/js/simple-login.js'
+			'../static/js/simple-login.js',
+			'../spec/dummySpec.js',
+			'../spec/simpleLoginExSpec.js'
 		],
 		reporters: ['progress'],
 		port: 9876,
