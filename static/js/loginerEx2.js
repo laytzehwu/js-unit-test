@@ -34,11 +34,19 @@ class LoginFormEx2 {
 		return this._$password.length > 0 ? this._$password.val() : '';
 	}
 	
+	enableLogin() {
+		this._$loginButton.removeAttr('disabled');
+	}
+	
+	disableLogin() {
+		this._$loginButton.attr('disabled', true);
+	}
+	
 	updateLoginButtonStatus() {
 		if (this.isLoginButtonDisable()) {
-			this._$loginButton.attr('disabled', true);
+			this.disableLogin();
 		} else {
-			this._$loginButton.removeAttr('disabled');
+			this.enableLogin();
 		}
 	}
 };

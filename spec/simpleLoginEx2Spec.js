@@ -53,4 +53,24 @@ describe('Login form Ex2', function () {
 		
 		expect(loginForm.isLoginButtonDisable()).toBeFalsy();
 	});
+	
+	it('ensure login button disable/enable', function () {
+		const loginForm = new LoginFormEx2();
+		const loginChecker = spyOn(loginForm, 'isLoginButtonDisable');
+		const enableLogin = spyOn(loginForm, 'enableLogin');
+		const disableLogin = spyOn(loginForm, 'disableLogin');
+		
+		loginChecker.and.returnValue(true);
+		loginForm.updateLoginButtonStatus();
+		expect(loginForm.enableLogin).not.toHaveBeenCalled();
+		expect(loginForm.disableLogin).toHaveBeenCalled();
+		
+		loginForm.enableLogin.calls.reset();
+		loginForm.disableLogin.calls.reset();
+		
+		loginChecker.and.returnValue(false);
+		loginForm.updateLoginButtonStatus();
+		expect(loginForm.enableLogin).toHaveBeenCalled();
+		expect(loginForm.disableLogin).not.toHaveBeenCalled();
+	})
 });
