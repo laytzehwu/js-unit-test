@@ -7,12 +7,14 @@ class LoginFormEx2 {
 		this._$loginID = $form.find('input[name="login"]');
 		this._$password = $form.find('input[name="password"]');
 		this._$loginButton = $form.find('button');
+		this._$tc = $form.find('input[name="tc"]');
 		const me = this;
 		const update = function () {
 			me.updateLoginButtonStatus();
 		}
 		this._$loginID.change(update);
 		this._$password.change(update);
+		this._$tc.change(update);
 		this.updateLoginButtonStatus();
 	}
 	
@@ -21,6 +23,9 @@ class LoginFormEx2 {
 			return true;
 		}
 		if (this.getPassword() === '') {
+			return true;
+		}
+		if (!this.isAgreeTC()) {
 			return true;
 		}
 		return false;
@@ -32,6 +37,10 @@ class LoginFormEx2 {
 	
 	getPassword() {
 		return this._$password.length > 0 ? this._$password.val() : '';
+	}
+	
+	isAgreeTC() {
+		return this._$tc.length > 0 ? this._$tc.is(':checked') : false;
 	}
 	
 	enableLogin() {

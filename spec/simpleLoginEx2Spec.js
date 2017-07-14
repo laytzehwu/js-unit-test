@@ -47,10 +47,26 @@ describe('Login form Ex2', function () {
 		const loginForm = new LoginFormEx2();
 		const loginID = spyOn(loginForm, 'getLoginID');
 		const password = spyOn(loginForm, 'getPassword');
+		const agreeTC = spyOn(loginForm, 'isAgreeTC');
 		
 		loginID.and.returnValue('ABC');
 		password.and.returnValue('123');
+		agreeTC.and.returnValue(true);
 		
+		expect(loginForm.isLoginButtonDisable()).toBeFalsy();
+	});
+	
+	it('ensure login button is disable before user check T&C', function () {
+		const loginForm = new LoginFormEx2();
+		const loginID = spyOn(loginForm, 'getLoginID');
+		const password = spyOn(loginForm, 'getPassword');
+		const agreeTC = spyOn(loginForm, 'isAgreeTC');
+		
+		loginID.and.returnValue('ABC');
+		password.and.returnValue('123');
+		expect(loginForm.isLoginButtonDisable()).toBeTruthy();
+		
+		agreeTC.and.returnValue(true);
 		expect(loginForm.isLoginButtonDisable()).toBeFalsy();
 	});
 	
