@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>User Login</title>
+		<link rel="stylesheet" href="/styles/style.css">
+	</head>
+    <body>
+		<header>
+			<h1>JS Unit Test Sharing - User Login</h1>
+		</header>
+		<section id="userlogin">
+			<form id="login" action="api/login" method="post">
+				<label>
+					Login ID
+					<input type="text" name="login" required>
+				</label>
+				<label>
+					Password
+					<input type="password" name="password" required>
+				</label>
+				<label>
+					<input type="checkbox" name="tc">
+					I agree T & C
+				</label>
+				<button type="submit">Login</button>
+			</form>
+		</section>
+		<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+		<script src="js/loginerEx2.js"></script>
+<script>
+$(document).ready(function () {
+	var $form = new LoginFormEx2('form#login');
+});
+</script>		
+    </body>
+</html>
