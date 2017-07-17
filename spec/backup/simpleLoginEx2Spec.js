@@ -1,11 +1,11 @@
 describe('Login form Ex2', function () {
 	it('Ensure the controller', function () {
+		const control = new LoginFormEx2();
 		expect(LoginFormEx2).not.toBeUndefined();
 	});
 	
 	it('disable login button by default', function () {
 		const loginForm = new LoginFormEx2();
-		expect(loginForm.isLoginButtonDisable).not.toBeUndefined();
 		expect(loginForm.isLoginButtonDisable()).toBeTruthy();
 	});
 	

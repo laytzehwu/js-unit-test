@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>User Login</title>
+		<link rel="stylesheet" href="/styles/style.css">
+	</head>
+    <body>
+		<header>
+			<h1>JS Unit Test Sharing - User Login</h1>
+		</header>
+		<section id="userlogin">
+			<form id="loginForm" action="api/login" method="post">
+				<label>
+					Login ID
+					<input type="text" name="login" required>
+				</label>
+				<label>
+					Password
+					<input type="password" name="password" required>
+				</label>
+				<label>
+					<input type="checkbox" name="tc">
+					Keep me logged.
+				</label>
+				<button type="submit">Login</button>
+			</form>
+		</section>
+		<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+		<script src="js/login-form.js"></script>
+<script>
+$(document).ready(function () {
+	var form = new LoginForm();
+	$('#login').change(() => {
+		form.login = $('#login').val();
+	});
+	$('#password').change(() => {
+		form.password = $('#password').val();
+	});
+	$('#loginForm').submit(() => {
+		if (!form.enableLogin()) {
+			return;
+		}
+		
+		// Do the login ajax call here
+		// ...
+	});
+});
+</script>		
+    </body>
+</html>
