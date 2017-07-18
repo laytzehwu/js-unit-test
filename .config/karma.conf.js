@@ -5,11 +5,11 @@ module.exports = function (config) {
 		files: [
 			'https://code.jquery.com/jquery-3.2.1.slim.min.js',
 			'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js',
-			{pattern: '../static/js/**/*.js', included: true},
+			{pattern: '../src/js/**/*.js', included: true},
 			{pattern: '../spec/**/*.spec.js', included: true}
 		],
 		exclude: [
-			'../static/backup/**/*.js',
+			'../src/backup/**/*.js',
 			'../spec/backup/**/*.js'
 		],
 		reporters: ['progress'],

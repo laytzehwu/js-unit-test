@@ -6,7 +6,7 @@
 	</head>
     <body>
 		<header>
-			<h1>JS Unit Test Sharing - User Login</h1>
+			<h1>TDD Practice - User Login</h1>
 		</header>
 		<section id="userlogin">
 			<form id="loginForm" action="api/login" method="post">
@@ -18,10 +18,10 @@
 					Password
 					<input type="password" name="password" required>
 				</label>
-				<label>
+				<!-- label>
 					<input type="checkbox" name="tc">
-					Keep me logged.
-				</label>
+					Agree term and condition.
+				</label -->
 				<button type="submit">Login</button>
 			</form>
 		</section>
@@ -31,23 +31,6 @@
   crossorigin="anonymous"></script>
 		<script src="js/login-form.js"></script>
 <script>
-$(document).ready(function () {
-	var form = new LoginForm();
-	$('#login').change(() => {
-		form.login = $('#login').val();
-	});
-	$('#password').change(() => {
-		form.password = $('#password').val();
-	});
-	$('#loginForm').submit(() => {
-		if (!form.enableLogin()) {
-			return;
-		}
-		
-		// Do the login ajax call here
-		// ...
-	});
-});
 </script>		
     </body>
 </html>
